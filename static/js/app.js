@@ -20,14 +20,8 @@ filter_data.on("click", function() {
     // Prevent the page from refreshing
     d3.event.preventDefault();
 
-    // Remove table body area to clean the previous results
-    ufo_table.remove();
-
-    // Select the ufo table and insert a body in it
-    d3.select("#ufo-table").append("tbody");
-
-    // Select the results table body
-    ufo_table = d3.select("tbody");
+    // Use `.html("") to clear any existing metadata
+    ufo_table.html("");
   
     // Get the value property of the input elements
     var inputDateVl = inputDateEl.property("value");
